@@ -1,7 +1,11 @@
 <?php
 
 return [
-
+    
+    'main_menu'                     => 'MENU PRINCIPAL',
+    'roles'                         => 'ROLES',
+    'areas'                         => 'AREAS',
+    'employees'                     => 'EMPLEADOS',
     'main_navigation'               => 'MAIN NAVIGATION',
     'blog'                          => 'Blog',
     'pages'                         => 'Pages',
