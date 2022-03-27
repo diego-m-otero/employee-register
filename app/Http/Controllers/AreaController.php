@@ -70,7 +70,7 @@ class AreaController extends Controller
         try {
             $response = $area->delete();
         } catch (\Throwable $th) {
-            $response = $th;
+            $response = $th->errorInfo;
         }
 
         return compact('response');

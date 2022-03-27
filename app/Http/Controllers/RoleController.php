@@ -70,7 +70,7 @@ class RoleController extends Controller
         try {
             $response = $role->delete();
         } catch (\Throwable $th) {
-            $response = $th;
+            $response = $th->errorInfo;
         }
 
         return compact('response');

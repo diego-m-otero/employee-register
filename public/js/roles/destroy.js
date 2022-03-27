@@ -19,13 +19,22 @@ $(document).on('click', '.btn-delete-roles', function(){
 				type: 'POST',
 				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
 			}).done(function(response){
-				
-				Swal.fire({
-					title: 'Exito!',
-					text: 'El rol ha sido eliminado correctamente.',
-					icon: 'success',
-					
-				})
+
+				if(response?.response === true){
+					Swal.fire({
+						title: 'Exito!',
+						text: 'El rol ha sido eliminada correctamente.',
+						icon: 'success',
+					})
+
+					table_roles.ajax.reload()
+				}else{
+					Swal.fire({
+						title: '',
+						text: 'El rol no se puede eliminar porque tiene datos asociados.',
+						icon: 'error',
+					})
+				}
 		
 				table_roles.ajax.reload()
 			}).always(function(){

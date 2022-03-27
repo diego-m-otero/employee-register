@@ -19,15 +19,22 @@ $(document).on('click', '.btn-delete-areas', function(){
 				type: 'POST',
 				headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
 			}).done(function(response){
-				
-				Swal.fire({
-					title: 'Exito!',
-					text: 'El área ha sido eliminada correctamente.',
-					icon: 'success',
-					
-				})
-		
-				table_areas.ajax.reload()
+
+				if(response?.response === true){
+					Swal.fire({
+						title: 'Exito!',
+						text: 'El área ha sido eliminada correctamente.',
+						icon: 'success',
+					})
+
+					table_areas.ajax.reload()
+				}else{
+					Swal.fire({
+						title: '',
+						text: 'El área no se puede eliminar porque tiene datos asociados.',
+						icon: 'error',
+					})
+				}				
 			}).always(function(){
 		
 			}).fail(function(response){})
