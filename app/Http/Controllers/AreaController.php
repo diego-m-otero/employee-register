@@ -16,8 +16,8 @@ class AreaController extends Controller
 		return Datatables::of($data)->addColumn('actions', function($model) {
 
             $buttons = '<div class="btn-group">';
-                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-action='update' data-route='".route('areas.update', $model->id)."' class='btn btn-secondary btn-modal-form-areas'><i class='fas fa-edit fa-1x'></i></a>";
-                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-route='".route('areas.destroy', $model->id)."' class='btn btn-danger btn-delete-areas' title='eliminar'><i class='fas fa-trash fa-1x'></i></a>";
+                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-action='update' data-route='".route('areas.update', $model->id)."' class='btn btn-secondary btn-sm btn-modal-form-areas'><i class='fas fa-edit fa-1x'></i></a>";
+                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-route='".route('areas.destroy', $model->id)."' class='btn btn-danger btn-sm btn-delete-areas' title='eliminar'><i class='fas fa-trash fa-1x'></i></a>";
             $buttons .= '</div>';
 
 			return $buttons;

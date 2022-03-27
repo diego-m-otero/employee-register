@@ -15,6 +15,16 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 255)->nullable(false);
+            $table->string('email', 255)->nullable(false);
+            $table->char('gender', 1)->nullable(false);
+
+            $table->unsignedBigInteger('area_id');
+            $table->foreign('area_id')->references('id')->on('areas');
+
+            $table->integer('notification')->nullable();
+            $table->text('description')->nullable(false);
+
             $table->timestamps();
         });
     }

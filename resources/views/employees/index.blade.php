@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Roles')
+@section('title', 'Empleados')
 
 @section('content_header')
     <h1></h1>
@@ -12,15 +12,15 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Roles
-                        <button data-action="create" data-route="{{ route('roles.store') }}" class="btn btn-primary btn-sm float-right btn-modal-form-roles">
+                        Empleados
+                        <button data-action="create" data-route="{{ route('employees.store') }}" class="btn btn-primary btn-sm float-right btn-modal-form-employees">
                             <i class="fas fa-plus"></i> Crear
                         </button>
                     </div>
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="table_roles" class="table table-striped"></table>
+                            <table id="table_employees" class="table table-striped"></table>
                         </div>
                     </div>
                 </div>
@@ -28,11 +28,12 @@
         </div>
     </div>
 
-    @include('roles.form')
+    @include('employees.form')
 
     @section('scripts')
-        <script src="/js/roles/datatable.js"></script>
-        <script src="/js/roles/form.js"></script>
-        <script src="/js/roles/destroy.js"></script>
+        <script src="/js/employees/datatable.js"></script>
+        <script src="/js/employees/options.js"></script>
+        <script src="/js/employees/form.js"></script>
+        <script src="/js/employees/destroy.js"></script>
     @stop
 @endsection

@@ -50,3 +50,4 @@ Route::post('/admin/employees/store', [App\Http\Controllers\EmployeeController::
 Route::get('/admin/employees/edit/{employee}', [App\Http\Controllers\EmployeeController::class, 'edit'])->name('employees.edit');
 Route::post('/admin/employees/update/{employee}', [App\Http\Controllers\EmployeeController::class, 'update'])->name('employees.update');
 Route::post('/admin/employees/destroy/{employee}', [App\Http\Controllers\EmployeeController::class, 'destroy'])->name('employees.destroy');
+Route::get('/admin/employees/form-options', [App\Http\Controllers\EmployeeController::class, 'formOptions']);

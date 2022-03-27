@@ -16,8 +16,8 @@ class RoleController extends Controller
 		return Datatables::of($data)->addColumn('actions', function($model) {
 
             $buttons = '<div class="btn-group">';
-                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-action='update' data-route='".route('roles.update', $model->id)."' class='btn btn-secondary btn-modal-form-roles'><i class='fas fa-edit fa-1x'></i></a>";
-                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-route='".route('roles.destroy', $model->id)."' class='btn btn-danger btn-delete-roles' title='eliminar'><i class='fas fa-trash fa-1x'></i></a>";
+                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-action='update' data-route='".route('roles.update', $model->id)."' class='btn btn-secondary btn-sm btn-modal-form-roles'><i class='fas fa-edit fa-1x'></i></a>";
+                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-route='".route('roles.destroy', $model->id)."' class='btn btn-danger btn-sm btn-delete-roles' title='eliminar'><i class='fas fa-trash fa-1x'></i></a>";
             $buttons .= '</div>';
 
 			return $buttons;

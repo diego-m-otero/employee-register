@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         Areas
-                        <button data-action="create" data-route="{{ route('areas.store') }}" class="btn btn-primary float-right btn-modal-form-areas">
+                        <button data-action="create" data-route="{{ route('areas.store') }}" class="btn btn-primary btn-sm float-right btn-modal-form-areas">
                             <i class="fas fa-plus"></i> Crear
                         </button>
                     </div>

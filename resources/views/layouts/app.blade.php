@@ -3,7 +3,6 @@
 @section('title', 'Home')
 
 @section('content')
-    <p></p>
 @stop
 
 @section('css')
