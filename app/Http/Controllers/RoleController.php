@@ -17,7 +17,7 @@ class RoleController extends Controller
 
             $buttons = '<div class="btn-group">';
                 $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-action='update' data-route='".route('roles.update', $model->id)."' class='btn btn-secondary btn-modal-form-roles'><i class='fas fa-edit fa-1x'></i></a>";
-                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-route='".route('roles.destroy', $model->id)."' class='btn btn-info btn-modal-delete-roles' title='eliminar'><i class='fas fa-trash fa-1x'></i></a>";
+                $buttons .= "<a href='javascript:void(0)' data-id='$model->id' data-route='".route('roles.destroy', $model->id)."' class='btn btn-danger btn-delete-roles' title='eliminar'><i class='fas fa-trash fa-1x'></i></a>";
             $buttons .= '</div>';
 
 			return $buttons;
@@ -67,6 +67,12 @@ class RoleController extends Controller
 
     public function destroy(Role $role)
     {
-        //
+        try {
+            $response = $role->delete();
+        } catch (\Throwable $th) {
+            $response = $th;
+        }
+
+        return compact('response');
     }
 }

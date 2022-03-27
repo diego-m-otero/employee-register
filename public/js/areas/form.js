@@ -1,32 +1,32 @@
-$(document).on('click', '.btn-modal-form-roles', function(){
+$(document).on('click', '.btn-modal-form-areas', function(){
 
 	let id     = $(this).data('id')
 	let route  = $(this).data('route')
 	let action = $(this).data('action')
     
-	$('#form_roles').trigger('reset')
-	$('#form_roles').attr('action', route)
+	$('#form_areas').trigger('reset')
+	$('#form_areas').attr('action', route)
     $('#errors').html('')
 
 	if(action == 'update'){	
 		$.ajax({
-			url: `/admin/roles/edit/${id}`,
+			url: `/admin/areas/edit/${id}`,
 			type: 'GET',
 		}).done(function(data){
-			let role = data.role
-			$('#form_roles #name').val(role.name)    
+			let area = data.area
+			$('#form_areas #name').val(area.name)    
 		}).always(function(){
 		})
 	}
 	
-	$('#modal_form_roles').modal('show')
+	$('#modal_form_areas').modal('show')
 })
 
 
-$(document).on('click', '.btn-form-save-roles', function(){
+$(document).on('click', '.btn-form-save-areas', function(){
 
-	let route = $('#form_roles').attr('action')
-    let data  = $('#form_roles').serialize()
+	let route = $('#form_areas').attr('action')
+    let data  = $('#form_areas').serialize()
 
 	$.ajax({
 		url: route,
@@ -36,13 +36,13 @@ $(document).on('click', '.btn-form-save-roles', function(){
         
         Swal.fire({
             title: 'Exito!',
-            text: 'El rol ha sido guardado correctamente.',
+            text: 'El área ha sido guardada correctamente.',
             icon: 'success',
             confirmButtonText: 'Cerrar'
         })
 
-        table_roles.ajax.reload()
-        $('#modal_form_roles').modal('hide')
+        table_areas.ajax.reload()
+        $('#modal_form_areas').modal('hide')
 	}).always(function(){
 
     }).fail(function(response){

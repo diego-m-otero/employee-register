@@ -1,4 +1,4 @@
-$(document).on('click', '.btn-delete-roles', function(){
+$(document).on('click', '.btn-delete-areas', function(){
 
 	let id     = $(this).data('id')
 	let route  = $(this).data('route')
@@ -22,12 +22,12 @@ $(document).on('click', '.btn-delete-roles', function(){
 				
 				Swal.fire({
 					title: 'Exito!',
-					text: 'El rol ha sido eliminado correctamente.',
+					text: 'El área ha sido eliminada correctamente.',
 					icon: 'success',
 					
 				})
 		
-				table_roles.ajax.reload()
+				table_areas.ajax.reload()
 			}).always(function(){
 		
 			}).fail(function(response){})
